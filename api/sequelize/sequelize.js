@@ -1,5 +1,5 @@
 let Sequelize = require('sequelize');
-let UserModel =require('./models/user-model');
+let UserModel =require('../models/user-model');
 
 const sequelize = new Sequelize({
   database: process.env.database,

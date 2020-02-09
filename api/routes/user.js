@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../sequelize').User;
+const User = require('../sequelize/sequelize').User;
 
 
 // create some helper functions to work on the database
