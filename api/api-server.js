@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
@@ -9,6 +10,7 @@ var PORT = process.env.PORT || 8080;
 
 const app = express();
 
+app.use(cors);
 // parse application/json
 app.use(bodyParser.json());
 //parse application/x-www-form-urlencoded
