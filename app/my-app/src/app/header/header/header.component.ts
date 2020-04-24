@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SorlingasService } from '../../services/sorlingas.service'
+import { SorlingasService } from '../../_services/sorlingas.service'
 
 @Component({
   selector: 'app-header',

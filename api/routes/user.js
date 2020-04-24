@@ -3,8 +3,8 @@ const User = require('../sequelize/sequelize').User;
 
 
 // create some helper functions to work on the database
-const createUser = async ({ email, password }) => { 
-    return await User.create({ email, password });
+const createUser = async ({ email, password, firstName, lastName, parentClientId }) => { 
+    return await User.create({ email, password, firstName, lastName, parentClientId });
   };  
 const getAllUsers = async () => {
     return await User.findAll();
@@ -22,8 +22,9 @@ module.exports = function(app,passport){
         res.json({ msg: 'Congrats! You are seeing this because you are authorized'});
     });
     app.post('/register', function(req, res, next) {
-        const { email, password } = req.body;
-        createUser({ email, password }).then(user =>
+        console.log(req.body);
+        const { email, password, firstName, lastName, parentClientId } = req.body;
+        createUser({ email, password, firstName, lastName, parentClientId }).then(user =>
             res.json({ user, msg: 'account created successfully' })
         ).catch(function(err){
             return res.status(400).json({ message: err.errors[0].message})
@@ -47,9 +48,7 @@ module.exports = function(app,passport){
                     }).then(user=>{
                         const token= jwt.sign({id:user.email},process.env.JWT_SECRET);
                         res.status(200).send({
-                            auth:true,
-                            email:user.email,
-                            token:token,
+                            user,
                             message:'user found and logged in'
                         });
                     });

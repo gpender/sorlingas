@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../_services/auth.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -14,14 +14,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(){
-    this.authService.login('guy.pender@m.com','dgsgdfgdf')
+    this.authService.login('guy.pender@me.com','qqqqq')
       .pipe(first())
       .subscribe(
         data => {
-          console.log('hello');
+          console.log(data);
+          console.log(this.authService.loggedIn);
           //his.router.navigate('['home]);
         },
         error => {
+          console.log(error);
+          console.log(this.authService.loggedIn);
 
         });
   }

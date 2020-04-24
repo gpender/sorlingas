@@ -22,12 +22,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false
     }, 
-    isAdmin: {
-      type: DataTypes.BOOLEAN,
-      default: false,
-      allowNull: false,
-      unique: false
-    },
     parentClientId:{
       type: DataTypes.INTEGER,
       default: null,

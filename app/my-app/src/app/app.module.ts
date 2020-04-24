@@ -11,6 +11,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { LoginComponent } from './login/login.component';
 import { EncComponent } from './enc/enc.component';
 import { OtherproductsComponent } from './otherproducts/otherproducts.component';
+import { AlertComponent } from './_components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OtherproductsComponent } from './otherproducts/otherproducts.component'
     ContactusComponent,
     LoginComponent,
     EncComponent,
-    OtherproductsComponent
+    OtherproductsComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
