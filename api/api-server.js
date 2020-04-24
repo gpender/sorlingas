@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 8080;
 
 const app = express();
 
-app.use(cors);
+app.use(cors())
 // parse application/json
 app.use(bodyParser.json());
 //parse application/x-www-form-urlencoded
