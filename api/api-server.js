@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const https = require('https');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -24,6 +26,13 @@ app.get('/', function(req, res) {
 });
 require('./routes/user')(app,passport);
 
-app.listen(PORT, function() {
+https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/sorlingas.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/sorlingas.com/fullchain.pem')
+}, app)
+.listen(PORT, function() {
   console.log(`==> 🌎 Sorlingas API listening on port ${PORT}!`);
 });
+//app.listen(PORT, function() {
+//  console.log(`==> 🌎 Sorlingas API listening on port ${PORT}!`);
+//});
