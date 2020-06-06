@@ -53,7 +53,7 @@ module.exports = function(app,passport){
                         },
                     }).then(user=>{
                         const token= jwt.sign({id:user.email},process.env.JWT_SECRET);
-                        res.redirect(307,'https://portal.sorlingas.com');
+                        res.redirect(307,'https://wwww.sorlingas.com/encs.html');
                         //res.status(200).send({
                         //    user,
                         //    message:'user found and logged in'
