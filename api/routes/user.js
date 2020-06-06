@@ -12,6 +12,11 @@ const getAllUsers = async () => {
 const getUser = async obj => {
     return await User.findOne({where: obj,});
 };
+const deleteUser = async user => {
+    console.log(user);
+    const userObj = await User.findOne({where: {email:user.email,}});
+    return await userObj.destroy();
+};
   
 module.exports = function(app,passport){  
     app.get('/users', function(req, res) {
@@ -32,6 +37,7 @@ module.exports = function(app,passport){
     });
 
     app.post('/login',(req,res,next) =>{
+        //console.log(user);
         passport.authenticate('login', (err,user,info) => {
             if(err){
                 console.log(err);
@@ -47,10 +53,11 @@ module.exports = function(app,passport){
                         },
                     }).then(user=>{
                         const token= jwt.sign({id:user.email},process.env.JWT_SECRET);
-                        res.status(200).send({
-                            user,
-                            message:'user found and logged in'
-                        });
+                        res.redirect(307,'https://portal.sorlingas.com');
+                        //res.status(200).send({
+                        //    user,
+                        //    message:'user found and logged in'
+                        //});
                     });
                 });
             }
@@ -59,8 +66,15 @@ module.exports = function(app,passport){
 
     // Endpoint to get current user
     app.get('/user', function(req, res){
+        console.log(req.user);
         res.send(req.user);
     });
+
+    app.delete('/user', function(req,res){
+        console.log(req.user);
+        return;
+        deleteUser(req.user);
+    })
     // app.post('/login', async function(req, res, next) { 
     //     const { name, password } = req.body;
     //     if (name && password) {
