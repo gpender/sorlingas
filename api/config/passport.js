@@ -76,7 +76,7 @@ passport.use(
             bcrypt.compare(password, user.password).then(response => {
               if (response !== true) {
                 console.log('passwords do not match');
-                return done(null, false, { message: 'passwords do not match' });
+                return done({ message: 'passwords do not match' }, false, { message: 'passwords do not match' });
               }
               console.log(`user ${user.email} found & authenticated`);
               // note the return needed with passport local - remove this return for passport JWT
