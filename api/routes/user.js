@@ -41,8 +41,8 @@ module.exports = function(app,passport){
         passport.authenticate('login', (err,user,info) => {
             if(err){
                 console.log(err);
-                res.status(200).send({
-                        message:err
+                res.status(401).send({
+                        err
                     });
             }
             if(info != undefined){
