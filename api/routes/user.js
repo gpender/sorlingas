@@ -55,7 +55,7 @@ module.exports = function(app,passport){
                         const token= jwt.sign({id:user.email},process.env.JWT_SECRET);
                         res.set('x-auth',token);
                         res.set('user',user);
-                        res.redirect(307,'https://portal.sorlingas.com');
+                        res.redirect('https://portal.sorlingas.com');
                         //res.status(200).send({
                         //    user,
                         //    token,
