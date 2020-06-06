@@ -53,10 +53,11 @@ module.exports = function(app,passport){
                         },
                     }).then(user=>{
                         const token= "JWT " + jwt.sign({id:user.email},process.env.JWT_SECRET);
-                        res.set('Authorization',token);
-                        res.set('user',user);
                         res.status(200).send({
-                            user,
+                            id:user.id,
+                            username: user.email,
+                            firstName: user.firstName,
+                            lastName: user.lastName,
                             token,
                             message:'user found and logged in'
                         });
