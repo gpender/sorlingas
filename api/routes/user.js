@@ -57,6 +57,7 @@ module.exports = function(app,passport){
                         //res.redirect(307,'https://portal.sorlingas.com');
                         res.status(200).send({
                             user,
+                            token,
                             message:'user found and logged in'
                         });
                     });
