@@ -41,9 +41,6 @@ module.exports = function(app,passport){
         passport.authenticate('login', (err,user,info) => {
             if(err){
                 console.log(err);
-                res.status(401).send({
-                        err
-                    });
             }
             if(info != undefined){
                 console.log(info.message);
@@ -61,8 +58,6 @@ module.exports = function(app,passport){
                         //    user,
                         //    message:'user found and logged in'
                         //});
-                    }).catch(function(err){
-                        res.redirect(401,'https://www.sorlingas.com');
                     });
                 });
             }
