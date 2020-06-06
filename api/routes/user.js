@@ -53,6 +53,7 @@ module.exports = function(app,passport){
                         },
                     }).then(user=>{
                         const token= "JWT " + jwt.sign({id:user.email},process.env.JWT_SECRET);
+                        console.log(user);
                         res.status(200).send({
                             id:user.id,
                             username: user.email,
