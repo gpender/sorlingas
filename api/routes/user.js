@@ -58,6 +58,8 @@ module.exports = function(app,passport){
                         //    user,
                         //    message:'user found and logged in'
                         //});
+                    }).catch(function(err){
+                        res.redirect(401,'https://www.sorlingas.com');
                     });
                 });
             }
