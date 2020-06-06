@@ -36,9 +36,6 @@ module.exports = function(sequelize, DataTypes) {
     isAdmin:{
       type:DataTypes.BOOLEAN,
       default:false
-    },
-    token:{
-      type: DataTypes.STRING
     }
   });
 
