@@ -53,14 +53,14 @@ module.exports = function(app,passport){
                         },
                     }).then(user=>{
                         const token= jwt.sign({id:user.email},process.env.JWT_SECRET);
-                        user.token = token;
-                        //res.redirect(307,'https://portal.sorlingas.com');
                         res.set('x-auth',token);
-                        res.status(200).send({
-                            user,
-                            token,
-                            message:'user found and logged in'
-                        });
+                        res.set('user',user);
+                        res.redirect(307,'https://portal.sorlingas.com');
+                        //res.status(200).send({
+                        //    user,
+                        //    token,
+                        //    message:'user found and logged in'
+                        //});
                     });
                 });
             }
