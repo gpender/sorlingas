@@ -38,8 +38,7 @@ module.exports = function(sequelize, DataTypes) {
       default:false
     },
     token:{
-      type: DataTypes.STRING,
-      allowNull:false
+      type: DataTypes.STRING
     }
   });
 
