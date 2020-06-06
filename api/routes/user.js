@@ -42,7 +42,7 @@ module.exports = function(app,passport){
             if(err){
                 console.log(err);
                 res.status(200).send({
-                        message:info.message
+                        message:err
                     });
             }
             if(info != undefined){
