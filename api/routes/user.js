@@ -55,13 +55,18 @@ module.exports = function(app,passport){
                         const token= "JWT " + jwt.sign({id:user.email},process.env.JWT_SECRET);
                         console.log(user);
                         res.status(200).send({
-                            id:user.id,
-                            username: user.email,
-                            firstName: user.firstName,
-                            lastName: user.lastName,
+                            user,
                             token,
                             message:'user found and logged in'
-                        });
+                        });                        
+                        // res.status(200).send({
+                        //     id:user.id,
+                        //     username: user.email,
+                        //     firstName: user.firstName,
+                        //     lastName: user.lastName,
+                        //     token,
+                        //     message:'user found and logged in'
+                        // });
                     });
                 });
             }
