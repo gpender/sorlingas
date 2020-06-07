@@ -33,6 +33,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    isPrimaryContact:{
+      type:DataTypes.BOOLEAN,
+      default:false
+    },
     isAdmin:{
       type:DataTypes.BOOLEAN,
       default:false
