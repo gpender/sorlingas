@@ -10,7 +10,10 @@ const getClient = async id => {
 
 
 module.exports = function(app,passport){  
-    app.get('/clients', passport.authenticate('jwt', { session: false }), function(req, res) {
+    // app.get('/clients', passport.authenticate('jwt', { session: false }), function(req, res) {
+    //     getAllClients().then(clients => res.json(clients)); 
+    // });
+    app.get('/clients', function(req, res) {
         getAllClients().then(clients => res.json(clients)); 
     });
     app.get('/client', function(req,res){
