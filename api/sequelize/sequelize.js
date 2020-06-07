@@ -1,5 +1,6 @@
 let Sequelize = require('sequelize');
 let UserModel =require('../models/user-model');
+let ClientModel =require('../models/client-model');
 
 const sequelize = new Sequelize({
   database: process.env.database,
@@ -23,5 +24,6 @@ sequelize.sync().then(() => {
 });
 
 const User = UserModel(sequelize, Sequelize);
+const Client = ClientModel(sequelize, Sequelize);
 
-module.exports = {User};
+module.exports = {User,Client};

@@ -25,6 +25,7 @@ app.get('/', function(req, res) {
   res.json({ message: 'Express is up!' });
 });
 require('./routes/user')(app,passport);
+require('./routes/client')(app,passport);
 
 https.createServer({
   key: fs.readFileSync('/etc/letsencrypt/live/sorlingas.com/privkey.pem'),
