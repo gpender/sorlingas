@@ -1,61 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Product - Sorlingas</title>
-    <link rel="icon" type="image/jpeg" sizes="450x273" href="assets/img/lighthouse-notext.jpg">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>ENCs - Sorlingas</title>
+  <link rel="shortcut icon" href="img/logo-white.png"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="color: rgb(42,44,93);">
-        <div class="container"><a class="navbar-brand logo" href="#" style="padding: 0px;margin: 0px;height: 66px;"><img src="assets/img/lighthouse-notext.jpg" style="width: 90px;"><span>Sorlingas Data Services</span></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="personnel.html">Personnel</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="encs.html">ENCs</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="other-products.html">Other Products</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://portal.sorlingas.com">Log In</a></li>
-                </ul>
-        </div>
-        </div>
+  <!-- Loader Image -->
+  <div class="loader">
+    <img src="img/loader.gif" alt="Loading..." />
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-ani navbar navbar-expand-lg navbar-light fixed-top"> <!-- bg-light -->
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="white-logo" src="img/logo-white.png" alt="Sorlingas">
+        <img class="black-logo" src="img/logo-black.png" alt="Sorlingas">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse nav-support" id="navbarNav">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personnel.html">Personnel</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="encs.html">ENCs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="other-products.html">Other Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">News</a>
+          </li>          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contacts</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://portal.sorlingas.com/login">Log In</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <main class="page">
-        <section class="clean-block">
-            <div class="container">
-                <div class="block-heading">
-                    <p class="text-left sorlingas-p1-noindent" style="font-weight:bold">Electronic Navigational Charts (ENCs)<br></p><img align="right" style="width:600px;margin-left:15px;margin-right:15px" src="assets/img/Gravesend_ENC.png" />
-<p></p>
-<p class="text-left sorlingas-p2-indent">These are digital datasets that conform to the IHO’s S-57 ENC Product Specification recording all the relevant charted features necessary for safe navigation such as coastline, bathymetry, buoys and lights. They display in Electronic Chart Systems (ECS).
+    </div>
 
-The ECS converts the ENC into its own native System ENC (SENC) format. The SENC
-
-format is optimised by the manufacturer for correct and efficient display. Features and their attributes (for example position, colour and shape) can be selectively displayed and queried creating the potential to customise the image on screen and to integrate with other on-board systems.
-
-ENCs fall into 6 usage bands ranging from the smallest scale (1 - Overview) to the largest (6 - Berthing). Bands 1 to 5 (Harbour) are generally produced by national charting authorities and tend to be vector reproductions of pre-existing paper charts. Only national hydrographic offices are sanctioned to produce official ENCs - those that satisfy SOLAS carriage compliance. Official berthing scale coverage is at present quite limited so many ports produce their own unofficial, though perfectly fit for purpose, band 6 ENCs.
-
-Sorlingas currently maintains four berthing scale ENCs on behalf of the Port of London Authority. These are used of a variety of ECS including the on-board display systems of PLA craft and pilot carry-on-board units - PPUs and tablets. Furthermore, they have been adopted into the UKHO's AVCS portfolio thus providing an extra revenue stream for both organisations and meaning that a ship's bridge team are looking at the same data as their pilot.
-</p></div>
-            </div>
-        </section>
-    </main>
-    <footer class="page-footer dark">
-        <div class="container">
-            <p class="text-center text-white">© 2020 SORLINGAS DATA SERVICES</p>
+  <!-- ENCs Page -->
+  <header class="encspage text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto about-promo-padding">
+          <h1 class="mb-5">ENCs</h1>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+      </div>
+    </div>
+  </header>
+
+  <section class="projects-section bg-white parallax-4" id="projects">
+    <div class="container">
+      <!-- Project Three Row -->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-12">
+              <div class="bg-black text-center h-100 project">
+                  <div class="d-flex h-100">
+                      <div class="project-text w-100 my-auto text-center text-lg-left">
+                          <h4>Electronic Navigational Charts (ENCs)</h4>
+                          <p class="mb-2">These are digital datasets that conform to the IHO’s S-57 ENC Product Specification recording all the relevant charted features necessary for safe navigation such as coastline, bathymetry, buoys and lights. They display in Electronic Chart Systems (ECS). The ECS converts the ENC into its own native System ENC (SENC) format. The SENC format is optimised by the manufacturer for correct and efficient display. Features and their attributes (for example position, colour and shape) can be selectively displayed and queried creating the potential to customise the image on screen and to integrate with other on-board systems. </p>
+                          <br>
+
+                          <p class="mb-0">ENCs fall into 6 usage bands ranging from the smallest scale (1 - Overview) to the largest (6 - Berthing). Bands 1 to 5 (Harbour) are generally produced by national charting authorities and tend to be vector reproductions of pre-existing paper charts. Only national hydrographic offices are sanctioned to produce official ENCs - those that satisfy SOLAS carriage compliance. Official berthing scale coverage is at present quite limited so many ports produce their own unofficial, though perfectly fit for purpose, band 6 ENCs. Sorlingas currently maintains four berthing scale ENCs on behalf of the Port of London Authority. These are used of a variety of ECS including the on-board display systems of PLA craft and pilot carry-on-board units - PPUs and tablets. Furthermore, they have been adopted into the UKHO's AVCS portfolio thus providing an extra revenue stream for both organisations and meaning that a ship's bridge team are looking at the same data as their pilot.</p>
+                          <hr class="d-none d-lg-block mb-0 ml-0">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>        
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <p class="text-muted small mb-4 mb-lg-0">2020 &copy; SORLINGAS DATA SERVICES.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/company/sorlingas-data-services/">
+                <i class="fab fa-linkedin fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 
 </html>

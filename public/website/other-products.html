@@ -1,59 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Product - Sorlingas</title>
-    <link rel="icon" type="image/jpeg" sizes="450x273" href="assets/img/lighthouse-notext.jpg">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Other Products - Sorlingas</title>
+  <link rel="shortcut icon" href="img/logo-white.png"/>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="color: rgb(42,44,93);">
-        <div class="container"><a class="navbar-brand logo" href="#" style="padding: 0px;margin: 0px;height: 66px;"><img src="assets/img/lighthouse-notext.jpg" style="width: 90px;"><span>Sorlingas Data Services</span></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="personnel.html">Personnel</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="encs.html">ENCs</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="other-products.html">Other Products</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://portal.sorlingas.com">Log In</a></li>
-                </ul>
-        </div>
-        </div>
+  <!-- Loader Image -->
+  <div class="loader">
+    <img src="img/loader.gif" alt="Loading..." />
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-ani navbar navbar-expand-lg navbar-light fixed-top"> <!-- bg-light -->
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img class="white-logo" src="img/logo-white.png" alt="Sorlingas">
+        <img class="black-logo" src="img/logo-black.png" alt="Sorlingas">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse nav-support" id="navbarNav">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personnel.html">Personnel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="encs.html">ENCs</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="other-products.html">Other Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">News</a>
+          </li>          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contacts</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://portal.sorlingas.com/login">Log In</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <main class="page">
-        <section class="clean-block">
-            <div class="container">
-                <div class="block-heading">
-                    <p class="text-left sorlingas-p1-noindent" style="font-weight:bold">Bathymetric ENCs (bENCs)<br></p><img align="right" style="width:600px;margin-left:15px;margin-right:15px" src="assets/img/bENC.png" />
-<p></p>
-<p class="text-left sorlingas-p2-indent">Port of London ENCs are compiled with 1 metre contour intervals allowing for detailed safety contour delimitation. In particularly sensitive and changeable areas, even greater definition can sometimes be required. 
+    </div>
 
-Highly accurate bathymetry from the most recent survey can be compiled into a Bathymetric ENC (bENC). In the case of the PLA, the key channels and berth approaches are now all covered at 0.5m contour interval. As bENCs are unofficial products, the compiler/commissioner can choose a contour interval that best suits the area and its navigational challenges. For instance, the Port of Rotterdam uses 0.25m intervals within high density (HD) ENCs that are generated by automatic scripts.
-
-At appropriate zoom bENCs, when enabled, overlay the existing display on the ECS giving important extra, and often more current, bathymetric detail. Aside from metadata, they contain only bathymetric features (soundings, contours and depth areas) which overlay. Base display items "shine through" from the underlying ENC.
-
-This simplicity means compilation time is usually much faster than that of an ENC. Sorlingas currently maintains a folio of 30 bENCs for the PLA.
-</p></div>
-            </div>
-        </section>
-    </main>
-    <footer class="page-footer dark">
-        <div class="container">
-            <p class="text-center text-white">© 2020 SORLINGAS DATA SERVICES</p>
+  <!-- Other Products Page -->
+  <header class="otherproductpage text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto about-promo-padding">
+          <h1 class="mb-5">Other Products</h1>
         </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+      </div>
+    </div>
+  </header>
+
+  <section class="projects-section bg-white parallax-2" id="projects">
+    <div class="container">
+      <!-- Project Three Row -->
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-5 separation"><img class="img-fluid" src="img/bENC.png" alt=""></div>
+          <div class="col-lg-7">
+              <div class="bg-black text-center h-100 project">
+                  <div class="d-flex h-100">
+                      <div class="project-text small-padding w-100 my-auto text-center text-lg-left">
+                          <h4>Bathymetric ENCs (bENCs)</h4>
+                          <p class="mb-4">Port of London ENCs are compiled with 1 metre contour intervals allowing for detailed safety contour delimitation. In particularly sensitive and changeable areas, even greater definition can sometimes be required. Highly accurate bathymetry from the most recent survey can be compiled into a Bathymetric ENC (bENC). In the case of the PLA, the key channels and berth approaches are now all covered at 0.5m contour interval.</p>
+                          <p class="mb-4">As bENCs are unofficial products, the compiler/commissioner can choose a contour interval that best suits the area and its navigational challenges. For instance, the Port of Rotterdam uses 0.25m intervals within high density (HD) ENCs that are generated by automatic scripts. At appropriate zoom bENCs, when enabled, overlay the existing display on the ECS giving important extra, and often more current, bathymetric detail. Aside from metadata, they contain only bathymetric features (soundings, contours and depth areas) which overlay. Base display items "shine through" from the underlying ENC. This simplicity means compilation time is usually much faster than that of an ENC. Sorlingas currently maintains a folio of 30 bENCs for the PLA.</p>
+                          <hr class="d-none d-lg-block mb-0 ml-0">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>        
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <p class="text-muted small mb-4 mb-lg-0">2020 &copy; SORLINGAS DATA SERVICES.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">      
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/company/sorlingas-data-services/">
+                <i class="fab fa-linkedin fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
 </body>
 
 </html>

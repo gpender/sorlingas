@@ -1,0 +1,509 @@
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+/* Loader Animation */
+.loader {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader > img {
+  width: 200px;
+}
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.parallax-1, .parallax-2, .parallax-3, .parallax-4 {
+  position: relative;
+  /*opacity: 0.65;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.parallax-1 {
+  background-image: url("../img/bg-2.jpg");
+  min-height: 100%;
+}
+
+.parallax-2 {
+  background-image: url("../img/bg-2.jpg");
+  min-height: 400px;
+}
+.parallax-3 {
+  background-image: url("../img/bg-4.jpg");
+  min-height: 100%;
+}
+
+.parallax-4 {
+  background-image: url("../img/Gravesend_ENC.png");
+  min-height: 100%;
+}
+
+.nav-support {
+  padding-left: 5em;
+}
+
+.navbar-brand img {
+    width: 8em;
+}
+
+.nav-ani {
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 17px;
+}
+
+.bg-light.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+.navbar-brand .black-logo {
+  display: none;
+}
+
+.bg-light .navbar-brand .black-logo {
+  display: block;
+}
+
+.bg-light .navbar-brand .white-logo {
+  display: none;
+}
+
+.navbar-nav li a {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.navbar-nav li a:hover,
+.navbar-nav .active a { 
+  background-color: #f0ffff; 
+  border-radius: 10px;
+}
+
+.bg-gray {
+    background: #ddd!important;
+}
+
+/*.bg-light .navbar-brand img {
+  width: 5em;
+}*/
+
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.main-topic {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.promo-padding {
+  padding-top: 7em;
+}
+
+.call-to-action {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/ship.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.call-to-action .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.projects-section {
+  padding: 5rem 0;
+}
+.projects-section .featured-text {
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  #navbarNav {
+    margin: 0;
+    padding:10px;
+    background-color: #fff;
+    color: #303030;
+  }
+  #navbarNav li a {
+    color: #303030;
+  }
+}
+@media (min-width: 992px) {
+  .projects-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid #64a19d;
+  }
+}
+.projects-section .project-text {
+  padding: 3rem;
+  font-size: 90%;
+}
+@media (min-width: 992px) {
+  .projects-section .project-text {
+    padding: 4rem;
+  }
+  .projects-section .project-text.small-padding {
+    padding: 2rem;
+  }
+  .projects-section .project-text hr {
+    border-color: #64a19d;
+    border-width: 0.25rem;
+    width: 30%;
+  }
+}
+
+.contact-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.contact-section .card {
+  border: 0;
+  border-bottom: 0.25rem solid #64a19d;
+}
+.contact-section .card h4 {
+  font-size: 0.8rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.contact-section .card hr {
+  border-color: #64a19d;
+  border-width: 0.25rem;
+  width: 3rem;
+}
+.contact-section .social {
+  margin-top: 5rem;
+}
+.contact-section .social a {
+  text-align: center;
+  height: 3rem;
+  width: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  line-height: 3rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+.contact-section .social a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact-section .social a:active {
+  color: #fff;
+}
+
+.bg-black {
+  background-color: #deece6 !important;
+  color: black;
+}
+
+a.bg-black:hover, a.bg-black:focus,
+button.bg-black:hover,
+button.bg-black:focus {
+  background-color: black !important;
+}
+
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+
+/* About Page */
+.about-stack-imgr {
+    padding-right: 20px;
+}
+
+.about-stack-img {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+header.aboutpage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.aboutpage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.aboutpage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.aboutpage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.aboutpage h1 {
+    font-size: 3rem;
+  }
+}
+
+.about-promo-padding {
+  padding-top: 7em;
+}
+
+/* Personnel Page */
+.margin20 {
+  margin-right: 20px;
+}
+
+header.personnelpage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.personnelpage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.personnelpage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.personnelpage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.personnelpage h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ENCs Page */
+header.encspage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.encspage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.encspage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.encspage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.encspage h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Other Product Page */
+header.otherproductpage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.otherproductpage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.otherproductpage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.otherproductpage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.otherproductpage h1 {
+    font-size: 3rem;
+  }
+}
+
+/* News Page */
+header.newspage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.newspage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.newspage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.newspage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.newspage h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Contact Page */
+header.contactpage {
+  position: relative;
+  background-color: #343a40;
+  background: url("../img/about-us.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+header.contactpage .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+header.contactpage h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.contactpage {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    height: 5em;
+  }
+  header.contactpage h1 {
+    font-size: 3rem;
+  }
+}
