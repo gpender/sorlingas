@@ -57,8 +57,17 @@ module.exports = function(app,passport){
             }
         });
     });    
-    app.get('/listServers', async function(req, res) {
+    app.get('/describeInstances', async function(req, res) {
         return await new AWS.EC2({apiVersion: '2014-10-01'}).describeInstances(function(error, data) {
+            if (error) {
+              res.status(400).send(error); // an error occurred
+            } else {
+                res.status(400).send(data);
+            }
+          });
+    });
+    app.get('/describeInstanceStatus', async function(req, res) {
+        return await new AWS.EC2({apiVersion: '2014-10-01'}).describeInstanceStatus({InstanceIds: ["i-0bd2edd447559793b"],IncludeAllInstances: true},function(error, data) {
             if (error) {
               res.status(400).send(error); // an error occurred
             } else {
