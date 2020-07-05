@@ -43,7 +43,7 @@ module.exports = function(app,passport){
                 res.status(400).send(err);
             }
             else{
-                res.status(400).send(data);
+                res.status(200).send(data);
             }
         });
     });
@@ -53,7 +53,7 @@ module.exports = function(app,passport){
                 res.status(400).send(err);
             }
             else{
-                res.status(400).send(data);
+                res.status(200).send(data);
             }
         });
     });    
@@ -62,7 +62,7 @@ module.exports = function(app,passport){
             if (error) {
               res.status(400).send(error); // an error occurred
             } else {
-                res.status(400).send(data);
+                res.status(200).send(data);
             }
           });
     });
@@ -71,7 +71,7 @@ module.exports = function(app,passport){
             if (error) {
               res.status(400).send(error); // an error occurred
             } else {
-                res.status(400).send(data);
+                res.status(200).send(data);
             }
           });
     });
