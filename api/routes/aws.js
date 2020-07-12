@@ -5,14 +5,19 @@ AWS.config.update({region:'eu-west-2'});
 
 var ec2 = new AWS.EC2();
 
-var params = {
-        InstanceIds: [
-            "i-0bd2edd447559793b"
-        ]
-    };
+    var defaultInstanceId = "i-0aebed2106f91338d";
+
+    var getParams = (req) => {
+        const reqQueryObject = req.query // returns object with all parameters
+        console.log(reqQueryObject);
+        var instanceId = req.query.instanceId; // returns "12354411"
+        if(instanceId == undefined){
+            instanceId = defaultInstanceId
+        }
+        return { InstanceIds: [ instanceId ]};
+    }
 
     const startInstance = async ()=>{
-        //console.log("Starting Instance");
         return await ec2.startInstances(params, function(err,data){
             if(err){
                 console.log(err,err.stack);
@@ -25,7 +30,8 @@ var params = {
     }
 
     const stopInstance = async ()=>{        
-        return await ec2.stopInstances(params, function(err,data){
+        var guy = getParams(req);
+        return await ec2.stopInstances(guy, function(err,data){
             if(err){
                 console.log(err,err.stack);
             }
@@ -37,8 +43,9 @@ var params = {
     }
 
 module.exports = function(app,passport){  
+
     app.get('/startServer', async function(req, res) {
-        return await ec2.startInstances(params, function(err,data){
+        return await ec2.startInstances(getParams(req), function(err,data){
             if(err){
                 res.status(400).send(err);
             }
@@ -47,8 +54,9 @@ module.exports = function(app,passport){
             }
         });
     });
+
     app.get('/stopServer', async function(req, res) {
-        return await ec2.stopInstances(params, function(err,data){
+        return await ec2.stopInstances(getParams(req), function(err,data){
             if(err){
                 res.status(400).send(err);
             }
