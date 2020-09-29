@@ -8,6 +8,7 @@ const sequelize = new Sequelize({
   password: process.env.password,
   host: process.env.host,
   dialect: process.env.dialect,
+  logQueryParameters: true
 });
 
 // check the databse connection

@@ -40,9 +40,13 @@ module.exports = function(sequelize, DataTypes) {
     isAdmin:{
       type:DataTypes.BOOLEAN,
       default:false
-    }
-  });
-
+    },
+  }, 
+  {
+    tableName: 'Users'
+  }
+);
+  
   User.beforeCreate(function(user, options, fn) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });

@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Clients', {
+  return sequelize.define('Client', {
     Client_Id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
