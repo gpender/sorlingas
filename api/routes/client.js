@@ -25,11 +25,11 @@ module.exports = function(app,passport){
     app.get('/clients', passport.authenticate('jwt', { session: false }), function(req, res) {
         getAllClients().then(clients => res.json(clients)); 
     });
-    app.get('/client', function(req,res){
+    app.get('/client', passport.authenticate('jwt', { session: false }), function(req,res){
         var id = req.query.id;
         getClient(id).then(client => res.json(client));
     });
-    app.put('/client', function(req, res, next) {
+    app.put('/client', passport.authenticate('jwt', { session: false }), function(req, res, next) {
         const {Client_Id,Name,ClientType,SorlingasClient,IndirectClient,NonSorlingasCell,ENCProvider,Conglomerate,Contact} = req.body; 
         // Client.update(
         //     {Client_Id:Client_Id,Contact:Contact},//,Name:params.Name,Contact:params.Contact},
