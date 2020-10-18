@@ -1,3 +1,4 @@
+const {request, gql } = require('graphql-request');
 const Board = require('../sequelize/sequelize').Board;
 const Pulse = require('../sequelize/sequelize').Pulse;
 
@@ -16,6 +17,53 @@ const updateOrCreate = async (model,where,newItem,beforeCreate) => {
                 .then(item => ({item, created:false}))
     })
 };
+
+async function getPulsesFromMonday(){
+    const endpoint = 'https://api.monday.com/v2'
+    const graphQLClient=new GraphQLClient(endpoint,{
+        headers:{
+            authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjg4MzY2MTU0LCJ1aWQiOjExNzI4NzY1LCJpYWQiOiIyMDIwLTEwLTE4VDEyOjAxOjUwLjAwMFoiLCJwZXIiOiJtZTp3cml0ZSJ9.v5lu-jdXzllMdHdguRyTA7ibTmXfeOITs-8bwztm9wk'
+        },
+    })
+    const query = gql`
+    query {
+        me {
+          name
+        }
+        
+        # boards(ids:[13542, 68097]) {
+        boards(limit:1) {
+          name
+          
+          columns {
+            title
+            id
+            type
+          }
+          
+          groups {
+              title
+            id
+          }
+          
+          items {
+            name
+            group {
+              id
+            }
+            
+            column_values {
+              id
+              value
+              text
+            }
+          }
+        }
+      }
+    `
+    const data = await graphQLClient.request(query);
+    console.log(JSON.stringify(data, undefined,2));
+}
 
 
 module.exports = function(app,passport){  
@@ -43,6 +91,8 @@ module.exports = function(app,passport){
                 console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
                 break;
         }
+        getPulsesFromMonday().catch((err) =>console.log(err));
+
         return res.status(200).json(req.body);
         const { email, password, firstName, lastName, parentClientId } = req.body;
         createUser({ email, password, firstName, lastName, parentClientId }).then(user =>
