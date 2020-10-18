@@ -60,6 +60,7 @@ module.exports = function(app,passport){
             case 'update_name':
             case 'update_column_value':
                 console.log(event);
+                if(event.value.name) event.pulseName = event.value.pulseName;
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
                     console.log(`${pulse} updated successfully`)
                 ).catch(function(err){
