@@ -21,6 +21,8 @@ const updateOrCreate = async (model,where,newItem,beforeCreate) => {
 module.exports = function(app,passport){  
     app.post('/monday/webhook', function(req, res, next) {
         var event = req.body.event;
+
+        return res.status(200).json(req.body);
         console.log(event);
         switch(event.type){
             case 'create_pulse':
