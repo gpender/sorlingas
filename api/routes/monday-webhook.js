@@ -62,9 +62,10 @@ module.exports = function(app,passport){
                 if(event.value.name){
                     console.log(event.value.name);
                     event.pulseName = event.value.pulseName;
+                    console.log(event.value.name);
                 } 
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
-                    console.log(`${pulse} updated successfully`)
+                    console.log(`${pulse.pulseName} updated successfully`)
                 ).catch(function(err){
                     return res.status(400).json({ message: err.errors[0].message})
                 })
