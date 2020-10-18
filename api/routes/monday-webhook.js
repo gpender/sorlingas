@@ -41,12 +41,8 @@ const updateOrCreate = async (model,where,newItem,beforeCreate) => {
 
 module.exports = function(app,passport){  
     app.post('/webhook', function(req, res, next) {
-        //console.log(req.body);
         var event = req.body.event;
-//        console.log(event.boardId)
- //       console.log(event.pulseId)
-  //      console.log(event.pulseName)
-        console.log(event.type)
+        console.log(event);
         switch(event.type){
             case 'create_pulse':
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
@@ -59,11 +55,7 @@ module.exports = function(app,passport){
             case 'create_update':
             case 'update_name':
             case 'update_column_value':
-                if(event.value.name){
-                    console.log(event.value.name);
-                    event.pulseName = event.value.name;
-                    console.log(event.pulseName);
-                } 
+                if(event.value.name) event.pulseName = event.value.name;
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
                     console.log(`${pulse.pulseName} updated successfully`)
                 ).catch(function(err){
@@ -71,14 +63,6 @@ module.exports = function(app,passport){
                 })
                 console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
                 break;
-            // case 'create_update':
-            //     updatePulse(event.pulseId, event.pulseName);
-            //     console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
-            //     break;
-            // case 'update_column_value':
-            //     updatePulse(event.pulseId, event.pulseName);
-            //     console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
-            //     break;
         }
         return res.status(200).json(req.body);
         const { email, password, firstName, lastName, parentClientId } = req.body;
