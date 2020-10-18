@@ -53,18 +53,27 @@ module.exports = function(app,passport){
                     console.log(`${pulse} created successfully`)
                 ).catch(function(err){
                     return res.status(400).json({ message: err.errors[0].message})
-                })
-                //updatePulse(event.pulseId, event.pulseName);
+                });
                 console.log(`create pulse ${event.pulseId} ${event.pulseName}`);
                 break;
             case 'create_update':
-                updatePulse(event.pulseId, event.pulseName);
-                console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
-                break;
+            case 'update_name':
             case 'update_column_value':
-                updatePulse(event.pulseId, event.pulseName);
+                updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
+                    console.log(`${pulse} updated successfully`)
+                ).catch(function(err){
+                    return res.status(400).json({ message: err.errors[0].message})
+                })
                 console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
                 break;
+            // case 'create_update':
+            //     updatePulse(event.pulseId, event.pulseName);
+            //     console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
+            //     break;
+            // case 'update_column_value':
+            //     updatePulse(event.pulseId, event.pulseName);
+            //     console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
+            //     break;
         }
         return res.status(200).json(req.body);
         const { email, password, firstName, lastName, parentClientId } = req.body;
