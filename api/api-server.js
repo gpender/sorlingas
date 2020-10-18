@@ -27,6 +27,7 @@ app.get('/', function(req, res) {
 require('./routes/user')(app,passport);
 require('./routes/aws')(app,passport);
 require('./routes/client')(app,passport);
+require('./routes/monday-webhook')(app,passport);
 
 https.createServer({
   key: fs.readFileSync('/etc/letsencrypt/live/sorlingas.com/privkey.pem'),
