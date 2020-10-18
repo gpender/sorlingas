@@ -24,19 +24,24 @@ const getClientPulses = async (boardId) => {
 
 
 module.exports = function(app,passport){  
-    // app.get('/clients', passport.authenticate('jwt', { session: false }), function(req, res) {
-    //     getAllClients().then(clients => res.json(clients)); 
-    // });
-    app.get('/boards', passport.authenticate('jwt', { session: false }), function(req, res) {
+       
+    //BOARDS
+    app.get('/mondaymysql/boards', passport.authenticate('jwt', { session: false }), function(req, res) {
         getAllBoards().then(boards => res.json(boards)); 
     });
-    app.get('/pulses', passport.authenticate('jwt', { session: false }), function(req, res) {
+    // PULSES
+    // app.get('/mondaymysql/pulses', passport.authenticate('jwt', { session: false }), function(req, res) {
+    //     getAllPulses().then(pulses => res.json(pulses)); 
+    // });
+    app.get('/mondaymysql/pulses', function(req, res) {
         getAllPulses().then(pulses => res.json(pulses)); 
-    });
-    app.get('/clientpulses', passport.authenticate('jwt', { session: false }), function(req,res){
+    });    
+    app.get('/mondaymysql/clientpulses', passport.authenticate('jwt', { session: false }), function(req,res){
         var boardId = req.query.boardId;
         getClientPulses(id).then(clientPulses => res.json(clientPulses));
     });
+
+
 
     // Update client
     app.put('/client', passport.authenticate('jwt', { session: false }), function(req, res, next) {

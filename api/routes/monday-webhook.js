@@ -1,27 +1,6 @@
 const Board = require('../sequelize/sequelize').Board;
 const Pulse = require('../sequelize/sequelize').Pulse;
 
-
-const createPulse = async ({ pulseId,pulseName }) => {
-    return await Pulse.createPulse(
-        {pulseId,pulseName},
-        {returning: false, where: {pulseId: pulseId} }
-    )
-    .then(function(updatedPulse) {
-        //updateClient2 = Client.findById(Client_Id)
-        return updatedPulse;
-    })
-};
-const updatePulse = async ({ pulseId,pulseName }) => {
-    return await Pulse.update(
-        {pulseId,pulseName},
-        {returning: false, where: {pulseId: pulseId} }
-    )
-    .then(function(updatedPulse) {
-        //updateClient2 = Client.findById(Client_Id)
-        return updatedPulse;
-    })
-};
 const updateOrCreate = async (model,where,newItem,beforeCreate) => {
     return await Pulse.findOne({where})
         .then(item => {
@@ -40,7 +19,7 @@ const updateOrCreate = async (model,where,newItem,beforeCreate) => {
 
 
 module.exports = function(app,passport){  
-    app.post('/webhook', function(req, res, next) {
+    app.post('/monday/webhook', function(req, res, next) {
         var event = req.body.event;
         console.log(event);
         switch(event.type){
