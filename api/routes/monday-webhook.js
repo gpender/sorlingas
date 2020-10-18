@@ -62,7 +62,7 @@ module.exports = function(app,passport){
                 if(event.value.name){
                     console.log(event.value.name);
                     event.pulseName = event.value.pulseName;
-                    console.log(event.value.name);
+                    console.log(event.pulseName);
                 } 
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
                     console.log(`${pulse.pulseName} updated successfully`)
