@@ -61,7 +61,7 @@ module.exports = function(app,passport){
             case 'update_column_value':
                 if(event.value.name){
                     console.log(event.value.name);
-                    event.pulseName = event.value.pulseName;
+                    event.pulseName = event.value.name;
                     console.log(event.pulseName);
                 } 
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
