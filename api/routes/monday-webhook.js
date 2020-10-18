@@ -46,7 +46,7 @@ module.exports = function(app,passport){
 //        console.log(event.boardId)
  //       console.log(event.pulseId)
   //      console.log(event.pulseName)
-    //    console.log(event.type)
+        console.log(event.type)
         switch(event.type){
             case 'create_pulse':
                 updateOrCreate(Pulse, {pulseId:event.pulseId},event,null).then(pulse =>
