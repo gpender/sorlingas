@@ -15,13 +15,13 @@ module.exports = function(app,passport){
     //    console.log(event.type)
         switch(event.type){
             case 'create_pulse':
-                console.log(`create pulse ${event.pulseId} ${pulse.pulseName}`);
+                console.log(`create pulse ${event.pulseId} ${event.pulseName}`);
                 break;
             case 'create_update':
-                console.log(`update pulse ${event.pulseId} ${pulse.pulseName}`);
+                console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
                 break;
             case 'update_column_value':
-                console.log(`update pulse ${event.pulseId} ${pulse.pulseName}`);
+                console.log(`update pulse ${event.pulseId} ${event.pulseName}`);
                 break;
         }
         return res.status(200).json(req.body);
