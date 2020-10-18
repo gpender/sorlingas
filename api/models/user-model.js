@@ -41,6 +41,12 @@ module.exports = function(sequelize, DataTypes) {
       type:DataTypes.BOOLEAN,
       default:false
     },
+    workSpaceId:{
+      type:DataTypes.INTEGER,
+      default: null,
+      allowNull: true,
+      unique: false 
+    },
   }, 
   {
     tableName: 'Users'
