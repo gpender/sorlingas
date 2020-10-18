@@ -2,6 +2,14 @@ const {GraphQLClient, gql } = require('graphql-request');
 const Board = require('../sequelize/sequelize').Board;
 const Pulse = require('../sequelize/sequelize').Pulse;
 
+const endpoint = 'https://api.monday.com/v2'
+const graphQLClient = new GraphQLClient(endpoint,{
+    headers:{
+        authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjg4MzY2MTU0LCJ1aWQiOjExNzI4NzY1LCJpYWQiOiIyMDIwLTEwLTE4VDEyOjAxOjUwLjAwMFoiLCJwZXIiOiJtZTp3cml0ZSJ9.v5lu-jdXzllMdHdguRyTA7ibTmXfeOITs-8bwztm9wk'
+    },
+})
+
+
 const updateOrCreate = async (model,where,newItem,beforeCreate) => {
     return await Pulse.findOne({where})
         .then(item => {
@@ -18,13 +26,34 @@ const updateOrCreate = async (model,where,newItem,beforeCreate) => {
     })
 };
 
-async function getPulsesFromMonday(){
-    const endpoint = 'https://api.monday.com/v2'
-    const graphQLClient = new GraphQLClient(endpoint,{
-        headers:{
-            authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjg4MzY2MTU0LCJ1aWQiOjExNzI4NzY1LCJpYWQiOiIyMDIwLTEwLTE4VDEyOjAxOjUwLjAwMFoiLCJwZXIiOiJtZTp3cml0ZSJ9.v5lu-jdXzllMdHdguRyTA7ibTmXfeOITs-8bwztm9wk'
-        },
-    })
+async function getBoardsFromMonday(){
+    const query = gql`
+    query {
+       
+        # boards(ids:[13542, 68097]) {
+            
+        boards() {
+          id
+          name
+          workspace_id
+          workspace(){
+              name
+          }
+          state
+        }
+      }
+    `
+    const data = await graphQLClient.request(query);//data;
+    return data;
+}
+
+
+async function getPulsesFromMonday(boardId){
+    // const graphQLClient = new GraphQLClient(endpoint,{
+    //     headers:{
+    //         authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjg4MzY2MTU0LCJ1aWQiOjExNzI4NzY1LCJpYWQiOiIyMDIwLTEwLTE4VDEyOjAxOjUwLjAwMFoiLCJwZXIiOiJtZTp3cml0ZSJ9.v5lu-jdXzllMdHdguRyTA7ibTmXfeOITs-8bwztm9wk'
+    //     },
+    // })
 
     const query2 = gql`
         query { boards (ids: 802770868) { columns { title settings_str } } }
@@ -34,7 +63,7 @@ async function getPulsesFromMonday(){
        
         # boards(ids:[13542, 68097]) {
             
-        boards(ids:[802770868, 68097],limit:1) {
+        boards(ids:[${boardId}, 68097],limit:1) {
 
           columns { title settings_str }
           id
@@ -43,7 +72,9 @@ async function getPulsesFromMonday(){
               title
             id
           }
-          
+          updates (){
+            id
+          }
           items {
             id
             name
@@ -65,20 +96,21 @@ async function getPulsesFromMonday(){
         }
       }
     `
-
-    //await graphQLClient.request(query);
     const data = await graphQLClient.request(query);//data;
-    return data;//JSON.stringify(data, undefined,2);//data;
-    console.log(JSON.stringify(data, undefined,2));
     return data;
-    return JSON.stringify({'guy':'543534'});// 
 }
 
 
 module.exports = function(app,passport){  
 
-    app.get('/guytest', function(req, res) {
-        getPulsesFromMonday().then((data) => {
+    app.get('/monday/boards', function(req, res) {
+        getBoardsFromMonday().then((data) => {
+            res.status(200).json(data); 
+        });
+    });
+    app.get('/monday/pulses', function(req, res) {
+        var boardId = req.query.id;
+        getPulsesFromMonday(boardId).then((data) => {
             console.log(JSON.stringify(data, undefined,2));
             res.status(200).json(data); 
         });
