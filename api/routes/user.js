@@ -18,7 +18,7 @@ const deleteUser = async user => {
     return await userObj.destroy();
 };
   
-module.exports = function(app,passport){  
+module.exports = function(app,passport){      
     app.get('/users', function(req, res) {
         getAllUsers().then(user => res.json(user)); 
     });

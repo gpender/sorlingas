@@ -6,6 +6,7 @@ const getAllClients = async () => {
 const getClient = async (id) => {
     return await Client.findOne({where: {Client_Id:id}});
 };
+
 const updateClient = async ({ Client_Id,Name,ClientType,SorlingasClient,IndirectClient,NonSorlingasCell,ENCProvider,Conglomerate,Contact }) => {
     return await Client.update(
         {Client_Id,Name,ClientType,SorlingasClient,IndirectClient,NonSorlingasCell,ENCProvider,Conglomerate,Contact},
@@ -29,6 +30,8 @@ module.exports = function(app,passport){
         var id = req.query.id;
         getClient(id).then(client => res.json(client));
     });
+
+    // Update client
     app.put('/client', passport.authenticate('jwt', { session: false }), function(req, res, next) {
         const {Client_Id,Name,ClientType,SorlingasClient,IndirectClient,NonSorlingasCell,ENCProvider,Conglomerate,Contact} = req.body; 
         // Client.update(

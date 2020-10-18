@@ -1,3 +1,6 @@
+const Board = require('../sequelize/sequelize').Board;
+const Pulse = require('../sequelize/sequelize').Pulse;
+
 
 
 

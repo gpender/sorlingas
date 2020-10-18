@@ -2,6 +2,9 @@ let Sequelize = require('sequelize');
 let UserModel =require('../models/user-model');
 let ClientModel =require('../models/client-model');
 
+let BoardModel =require('../models/monday/board-model');
+let PulseModel =require('../models/monday/pulse-model');
+
 const sequelize = new Sequelize({
   database: process.env.database,
   username: process.env.username,
@@ -27,4 +30,7 @@ sequelize.sync().then(() => {
 const User = UserModel(sequelize, Sequelize);
 const Client = ClientModel(sequelize, Sequelize);
 
-module.exports = {User,Client};
+const Board = BoardModel(sequelize, Sequelize);
+const Pulse = PulseModel(sequelize, Sequelize);
+
+module.exports = {User,Client, Board, Pulse};
