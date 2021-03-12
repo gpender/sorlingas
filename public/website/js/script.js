@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
 
   var newsInclude = 'latest-news.html';
   newsInclude = $.urlParam('param1') || newsInclude;
-  $('#projects').load('includes/' + newsInclude);
+  $('#news').load('includes/' + newsInclude);
 });
 
 $(function() {
