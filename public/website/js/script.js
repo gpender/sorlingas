@@ -17,6 +17,10 @@ $(document).ready(function(){
 window.addEventListener("load", function () {
   const loader = document.querySelector(".loader");
   loader.className += " hidden"; // class "loader hidden"
+
+  var newsInclude = 'latest-news.html';
+  newsInclude = $.urlParam('param1') || newsInclude;
+  $('#projects').load('includes/' + newsInclude);
 });
 
 $(function() {
@@ -24,3 +28,11 @@ $(function() {
 	var navElement = $('a[href="' + page + '"]')[0].parentNode;
 	$(navElement).addClass('active');
   });
+
+$.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                      .exec(window.location.search);
+    return (results !== null) ? results[1] || 0 : false;
+}
+
+
