@@ -1,6 +1,4 @@
-- name: FTP Uploader
-  # You may pin to the exact commit or the version.
-  # uses: zinh/ftp-uploader-action@10d256274547c8b84848edf454bfeb0b8a451c41
+- name: FTP_Uploader
   uses: zinh/ftp-uploader-action@v0.4
   with:
     # Hostname of ftp server, eg: ftpHostname: ftp.test
@@ -16,4 +14,4 @@
     # Destination folder
     dest: /htdocs
     # For debug
-    dryRun: # optional
+    #dryRun: # optional
