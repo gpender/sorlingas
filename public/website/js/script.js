@@ -25,6 +25,7 @@ window.addEventListener("load", function () {
 
 $(function() {
 	var page = location.pathname.split("/")[1];
+  if(page == null) page = "index.html";
 	var navElement = $('a[href="' + page + '"]')[0].parentNode;
 	$(navElement).addClass('active');
   });
