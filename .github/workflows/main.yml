@@ -1,17 +1,11 @@
-- name: FTP_Uploader
-  uses: zinh/ftp-uploader-action@v0.4
+name: FTP_Uploader
+uses: zinh/ftp-uploader-action@v0.4
   with:
-    # Hostname of ftp server, eg: ftpHostname: ftp.test
     ftpHostname: ftp.sorlingas.com
-    # User of ftp account
     ftpUsername: sorlingas.com
-    # Password of ftp account
     ftpPassword: J@mesWr1ght
-    # List files to upload to ftp server
     files: 
-    # Source folder
     src: /public/website 
-    # Destination folder
     dest: /htdocs
     # For debug
     #dryRun: # optional
