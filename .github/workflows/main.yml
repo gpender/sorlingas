@@ -1,0 +1,19 @@
+- name: FTP Uploader
+  # You may pin to the exact commit or the version.
+  # uses: zinh/ftp-uploader-action@10d256274547c8b84848edf454bfeb0b8a451c41
+  uses: zinh/ftp-uploader-action@v0.4
+  with:
+    # Hostname of ftp server, eg: ftpHostname: ftp.test
+    ftpHostname: ftp.sorlingas.com
+    # User of ftp account
+    ftpUsername: sorlingas.com
+    # Password of ftp account
+    ftpPassword: J@mesWr1ght
+    # List files to upload to ftp server
+    files: 
+    # Source folder
+    src: /public/website 
+    # Destination folder
+    dest: /htdocs
+    # For debug
+    dryRun: # optional
